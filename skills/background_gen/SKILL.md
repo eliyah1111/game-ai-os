@@ -24,6 +24,8 @@ Infer these from the user request:
 ## Agent Rules
 
 - Use only `$BACKGROUND_GEN` as the user-facing command.
+- This command is image-first: create actual layered background images with built-in image generation before returning.
+- Always apply the fixed `$BACKGROUND_GEN` command signature: modern mobile casual puzzle background, gameplay-safe contrast, layered depth.
 - Keep the active Style Lock profile.
 - Backgrounds must support gameplay visibility.
 - Avoid busy texture detail behind puzzle boards.
@@ -34,7 +36,8 @@ Infer these from the user request:
 
 1. Select a background strategy from `references/background-strategies.md`.
 2. Define layers and gameplay readability constraints.
-3. Generate layered background assets or recipes.
+3. Apply the `$BACKGROUND_GEN` command signature and active Style Lock profile.
+4. Use built-in image generation to create layered background assets or render-ready layer images.
 4. Use `scripts/compose_background_manifest.mjs` to create an engine layer manifest when needed.
 5. Return layered backgrounds, depth separation, blur maps, and atmosphere metadata.
 
@@ -50,5 +53,7 @@ Infer these from the user request:
 
 - `references/background-strategies.md`
 - `scripts/compose_background_manifest.mjs`
+- `../_shared/references/image-generation-contract.md`
+- `../_shared/references/command-signatures.md`
 - `../_shared/references/style-lock-contract.md`
 - `../_shared/references/mobile-export-contract.md`

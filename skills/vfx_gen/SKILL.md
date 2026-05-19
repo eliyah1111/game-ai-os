@@ -25,6 +25,8 @@ Infer these from the user request:
 ## Agent Rules
 
 - Use only `$VFX_GEN` as the user-facing command.
+- This command is image-first: create actual transparent VFX frame images with built-in image generation before returning.
+- Always apply the fixed `$VFX_GEN` command signature: short satisfying casual-game VFX, transparent frames, style-locked glow and particles.
 - Match the active Style Lock glow, particle shape, color palette, and easing.
 - Keep VFX short, satisfying, and readable.
 - Do not cover important puzzle state for too long.
@@ -34,8 +36,9 @@ Infer these from the user request:
 ## Workflow
 
 1. Select an effect model from `references/vfx-timing.md`.
-2. Write a style-locked prompt for transparent VFX frames.
-3. Generate a raw sheet with solid `#FF00FF` background when processing is needed.
+2. Apply the `$VFX_GEN` command signature and active Style Lock profile.
+3. Write a style-locked prompt for transparent VFX frames.
+4. Use built-in image generation to create a raw sheet with solid `#FF00FF` background when processing is needed.
 4. Use `scripts/process_vfx_sheet.mjs` to remove chroma key, split frames, and emit QC metadata.
 5. Return frames, timing metadata, blending suggestions, and animation curves.
 
@@ -52,5 +55,7 @@ Infer these from the user request:
 
 - `references/vfx-timing.md`
 - `scripts/process_vfx_sheet.mjs`
+- `../_shared/references/image-generation-contract.md`
+- `../_shared/references/command-signatures.md`
 - `../_shared/references/style-lock-contract.md`
 - `../_shared/references/mobile-export-contract.md`

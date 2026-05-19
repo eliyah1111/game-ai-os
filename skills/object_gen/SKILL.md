@@ -24,6 +24,8 @@ Infer these from the user request:
 ## Agent Rules
 
 - Use only `$OBJECT_GEN` as the user-facing command.
+- This command is image-first: create actual transparent object images with built-in image generation before returning.
+- Always apply the fixed `$OBJECT_GEN` command signature: modern mobile puzzle object, readable board-scale silhouette, style-locked variants.
 - Preserve the active Style Lock profile across every variant.
 - Keep silhouettes identical across color variants when gameplay meaning depends on color.
 - Use clear collision metadata and keep colliders slightly inset from glossy edges.
@@ -34,7 +36,8 @@ Infer these from the user request:
 
 1. Classify objects with `references/object-taxonomy.md`.
 2. Resolve collision and scale rules with `references/collision-rules.md`.
-3. Generate transparent object assets or a variant sheet.
+3. Apply the `$OBJECT_GEN` command signature and active Style Lock profile.
+4. Use built-in image generation to create transparent object assets or a variant sheet.
 4. Use `scripts/slice_object_variants.mjs` for sheet splitting and QC metadata when needed.
 5. Return transparent PNGs, variants, object metadata, scale rules, and collision metadata.
 
@@ -52,5 +55,7 @@ Infer these from the user request:
 - `references/object-taxonomy.md`
 - `references/collision-rules.md`
 - `scripts/slice_object_variants.mjs`
+- `../_shared/references/image-generation-contract.md`
+- `../_shared/references/command-signatures.md`
 - `../_shared/references/style-lock-contract.md`
 - `../_shared/references/mobile-export-contract.md`

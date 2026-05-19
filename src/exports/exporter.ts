@@ -20,7 +20,7 @@ export class Exporter {
     const exportReadyDir = join(outputDir, "export_ready");
     mkdirSync(exportReadyDir, { recursive: true });
 
-    const generatedAssets = this.previewProvider.writeAssets(outputDir, pkg.skillGeneration.assets, pkg.styleProfile);
+    const generatedAssets = this.previewProvider.writeAssets(outputDir, pkg.skillGeneration.assets, pkg.styleProfile, pkg.commandSignature);
     const metadataPath = join(outputDir, "metadata.json");
     const styleProfilePath = join(outputDir, "style_profile.json");
     const layoutDataPath = join(outputDir, "layout_data.json");
@@ -29,12 +29,14 @@ export class Exporter {
       id: folderName,
       createdAt: new Date().toISOString(),
       command: pkg.parsedPrompt.command,
+      commandSignature: pkg.commandSignature,
       subject: pkg.parsedPrompt.subject,
       promptHash: createHash("sha256").update(pkg.parsedPrompt.raw).digest("hex"),
       generatedAssets,
       assetRequests: pkg.skillGeneration.assets,
       skillMetadata: pkg.skillGeneration.metadata,
       designLanguage: pkg.designLanguage,
+      imageGenerationRequired: pkg.commandSignature.imageGeneration.required,
       namingConvention: "snake_case with role prefixes such as btn_, popup_, vfx_, bg_, obj_, spr_"
     };
 
@@ -113,10 +115,11 @@ export class Exporter {
       "",
       `Subject: ${pkg.parsedPrompt.subject}`,
       `Style: ${pkg.styleProfile.name}`,
+      `Command Signature: ${pkg.commandSignature.signatureId}`,
       "",
-      "This folder contains the generated asset placeholders, provider recipes, metadata, style profile, layout data, and engine-ready manifests.",
+      "This folder contains generated asset placeholders, image-generation recipes, metadata, style profile, layout data, and engine-ready manifests.",
       "",
-      "For production art, connect an image provider to the recipe files in `generated_assets/` and preserve the metadata contracts in this folder.",
+      "When this command is used as a Codex skill, it must create actual images with built-in image generation. The local CLI writes recipes and metadata for the same image-first contract.",
       ""
     ].join("\n");
 

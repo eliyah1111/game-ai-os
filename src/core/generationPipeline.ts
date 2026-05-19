@@ -1,6 +1,7 @@
 import { SKILL_REGISTRY } from "../commands/registry";
 import { Exporter } from "../exports/exporter";
 import { parsePrompt } from "../prompt_parser/parser";
+import { CommandSignatureEngine } from "./commandSignatureEngine";
 import { DesignLanguageEngine } from "./designLanguageEngine";
 import { LayoutEngine } from "./layoutEngine";
 import { MemoryStore } from "./memoryStore";
@@ -9,6 +10,7 @@ import { ExportResult, GenerationPackage } from "../types";
 
 export class GenerationPipeline {
   private readonly memoryStore: MemoryStore;
+  private readonly commandSignatureEngine = new CommandSignatureEngine();
   private readonly styleLockEngine: StyleLockEngine;
   private readonly designLanguageEngine = new DesignLanguageEngine();
   private readonly layoutEngine = new LayoutEngine();
@@ -22,6 +24,7 @@ export class GenerationPipeline {
 
   run(rawPrompt: string): ExportResult {
     const parsedPrompt = parsePrompt(rawPrompt);
+    const commandSignature = this.commandSignatureEngine.resolve(parsedPrompt.command);
     const styleProfile = this.styleLockEngine.resolve(parsedPrompt);
     const designLanguage = this.designLanguageEngine.create(styleProfile);
     const skillGeneration = SKILL_REGISTRY[parsedPrompt.command](parsedPrompt, styleProfile, designLanguage);
@@ -29,6 +32,7 @@ export class GenerationPipeline {
 
     const pkg: GenerationPackage = {
       parsedPrompt,
+      commandSignature,
       styleProfile,
       designLanguage,
       layoutData,

@@ -18,6 +18,16 @@ Game AI OS intentionally exposes only five commands:
 
 Any other command is rejected by the parser.
 
+Every command is image-first. In Codex, invoking a command should create actual bitmap images, then return metadata and engine-ready exports. Each command also has a fixed command signature, which acts like a built-in stamp for prompt behavior, naming, output shape, and visual consistency.
+
+| Command | Fixed Image Signature |
+| --- | --- |
+| `$SPRITE_GEN` | Transparent modern mobile gameplay sprite frames and atlases |
+| `$UI_GEN` | Layered mobile UI images with exact safe-area layout |
+| `$OBJECT_GEN` | Transparent puzzle object variants with collision metadata |
+| `$BACKGROUND_GEN` | Layered gameplay-safe background images |
+| `$VFX_GEN` | Transparent VFX frame sequences with timing and blend metadata |
+
 ## Install
 
 ### Windows PowerShell
@@ -81,7 +91,7 @@ Each generation writes an export folder under `exports/` with:
 - `export_ready/godot/`
 - `export_ready/web/`
 
-The local preview provider creates transparent PNG placeholders, SVG previews, and production render recipes. Connect your preferred image model or internal renderer to the recipe files to produce final art while preserving the metadata contract.
+The local CLI creates transparent PNG placeholders, SVG previews, production render recipes, and metadata. In a Codex skill session, the command must use built-in image generation to create the actual bitmap images and then preserve the same metadata contract.
 
 ## Example Prompt
 
@@ -137,6 +147,8 @@ Each skill follows a Forge-style package contract:
 - `agents/openai.yaml` for interface defaults
 - `references/` for mode, prompt, layout, collision, timing, or strategy rules
 - `scripts/` for deterministic local processing
+
+Each command also has a fixed image signature stored in `command_signatures/command_signatures.json` and emitted into `metadata.json`.
 
 ## Core Systems
 

@@ -7,6 +7,8 @@ The difference is the product direction:
 - Game AI OS targets modern mobile casual and puzzle games.
 - It avoids pixel-art defaults, retro RPG assumptions, and complex AAA realism.
 - It treats UI precision, Style Lock consistency, and mobile-safe layout as first-class systems.
+- It makes every command image-first: the skill must create actual bitmap images, not only plans or JSON.
+- It adds fixed command signatures so each `$..._GEN` command has a stable visual stamp and output contract.
 
 ## Skill Package Shape
 
@@ -24,8 +26,8 @@ skills/<skill_name>/
 1. User invokes exactly one of the five commands.
 2. The prompt parser extracts structured intent.
 3. Style Lock resolves the active visual system.
-4. The command skill creates asset recipes and metadata.
-5. A bitmap generation backend creates raw art.
+4. The command signature is applied.
+5. The command skill creates actual bitmap art with image generation.
 6. Local scripts process sheets, guides, layers, and metadata deterministically.
 7. Export manifests make the result ready for Unity, Godot, and Web games.
 

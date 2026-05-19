@@ -25,6 +25,8 @@ Infer these from the user request:
 ## Agent Rules
 
 - Use only `$SPRITE_GEN` as the user-facing command.
+- This command is image-first: create actual bitmap sprite art with built-in image generation before returning.
+- Always apply the fixed `$SPRITE_GEN` command signature: modern mobile casual gameplay sprite, transparent frames, stable identity, style-locked palette.
 - Keep the active Style Lock profile across every action.
 - Do not default to pixel art, retro RPG sheets, or 16-bit language.
 - Generate one coherent action family per raw sheet.
@@ -37,8 +39,9 @@ Infer these from the user request:
 ## Workflow
 
 1. Infer the animation plan and frame counts.
-2. Write a production prompt using `references/prompt-rules.md`.
-3. Generate a raw visual sheet with a flat `#FF00FF` background when sheet processing is needed.
+2. Apply the `$SPRITE_GEN` command signature and active Style Lock profile.
+3. Write a production prompt using `references/prompt-rules.md`.
+4. Use built-in image generation to create the raw visual sheet with a flat `#FF00FF` background when sheet processing is needed.
 4. Run `scripts/process_sprite_sheet.mjs` to remove chroma key, split frames, and write QC metadata.
 5. Reject or regenerate if frames touch cell edges, drift in scale, or lose silhouette readability.
 6. Return transparent PNGs, frames, atlas metadata, timing, and collision suggestions.
@@ -57,5 +60,7 @@ Infer these from the user request:
 - `references/modes.md`
 - `references/prompt-rules.md`
 - `scripts/process_sprite_sheet.mjs`
+- `../_shared/references/image-generation-contract.md`
+- `../_shared/references/command-signatures.md`
 - `../_shared/references/style-lock-contract.md`
 - `../_shared/references/mobile-export-contract.md`

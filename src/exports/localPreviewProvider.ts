@@ -1,11 +1,11 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { PNG } from "pngjs";
-import { AssetRequest, GeneratedAssetFile, StyleProfile } from "../types";
+import { AssetRequest, CommandSignature, GeneratedAssetFile, StyleProfile } from "../types";
 import { writeJson } from "../utils/json";
 
 export class LocalPreviewProvider {
-  writeAssets(outputDir: string, assets: AssetRequest[], style: StyleProfile): GeneratedAssetFile[] {
+  writeAssets(outputDir: string, assets: AssetRequest[], style: StyleProfile, commandSignature: CommandSignature): GeneratedAssetFile[] {
     const assetDir = join(outputDir, "generated_assets");
     mkdirSync(assetDir, { recursive: true });
 
@@ -18,9 +18,16 @@ export class LocalPreviewProvider {
       writeFileSync(svgPreviewPath, createSvgPreview(asset, style), "utf8");
       writeJson(recipePath, {
         asset,
+        commandSignature,
+        imagePrompt: [
+          commandSignature.visualStamp.promptPrefix,
+          asset.prompt,
+          commandSignature.visualStamp.promptSuffix
+        ].join(" "),
         provider: "local-preview",
-        note: "The PNG is a transparent placeholder. Connect a production image provider to render final art from this recipe.",
+        note: "The PNG is a transparent placeholder for CLI runs. In Codex skill usage, this command must call built-in image generation and save actual images.",
         productionRenderRequirements: [
+          "use built-in image generation for actual bitmap art",
           "transparent PNG for sprites, objects, UI, and VFX",
           "layered source retained where provider supports it",
           "no pixel-art upscaling",

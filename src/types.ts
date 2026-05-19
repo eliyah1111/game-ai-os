@@ -10,6 +10,32 @@ export type CommandName = (typeof COMMAND_NAMES)[number];
 
 export type ExportTarget = "unity" | "godot" | "web";
 
+export interface CommandSignature {
+  command: CommandName;
+  signatureId: string;
+  displayName: string;
+  fixedIntent: string;
+  imageGeneration: {
+    required: boolean;
+    provider: "codex_image_gen";
+    rawBackground: "transparent" | "#FF00FF" | "style_background";
+    finalFormat: "transparent_png" | "layered_png" | "png_sequence";
+    preferredAspectRatio: string;
+    minimumResolution: {
+      width: number;
+      height: number;
+    };
+  };
+  visualStamp: {
+    promptPrefix: string;
+    promptSuffix: string;
+    namingPrefix: string;
+    outputFolder: string;
+  };
+  requiredOutputs: string[];
+  forbiddenOutputs: string[];
+}
+
 export interface ParsedPrompt {
   command: CommandName;
   raw: string;
@@ -221,6 +247,7 @@ export interface GeneratedAssetFile {
 
 export interface GenerationPackage {
   parsedPrompt: ParsedPrompt;
+  commandSignature: CommandSignature;
   styleProfile: StyleProfile;
   designLanguage: DesignLanguage;
   layoutData: LayoutData;

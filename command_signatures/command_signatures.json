@@ -1,0 +1,37 @@
+{
+  "$SPRITE_GEN": {
+    "signatureId": "sprite_image_signature_v1",
+    "intent": "Create actual transparent gameplay sprite images and animation frames for modern mobile casual games.",
+    "visualStamp": "modern mobile casual gameplay sprite, consistent character identity, style-locked palette, clean scalable silhouette",
+    "requiredImageOutput": "transparent PNG frames and sprite atlas",
+    "namingPrefix": "spr_"
+  },
+  "$UI_GEN": {
+    "signatureId": "ui_image_signature_v1",
+    "intent": "Create actual layered mobile game UI images with precise responsive layout metadata.",
+    "visualStamp": "modern mobile casual puzzle UI, exact safe-area layout, style-locked components, synchronized spacing",
+    "requiredImageOutput": "layered UI PNG assets",
+    "namingPrefix": "ui_"
+  },
+  "$OBJECT_GEN": {
+    "signatureId": "object_image_signature_v1",
+    "intent": "Create actual transparent gameplay object images and variants for mobile puzzle games.",
+    "visualStamp": "modern mobile puzzle object, readable board-scale silhouette, style-locked variants",
+    "requiredImageOutput": "transparent PNG variants",
+    "namingPrefix": "obj_"
+  },
+  "$BACKGROUND_GEN": {
+    "signatureId": "background_image_signature_v1",
+    "intent": "Create actual layered background images for mobile casual and puzzle games.",
+    "visualStamp": "modern mobile casual puzzle background, gameplay-safe contrast, layered depth",
+    "requiredImageOutput": "layered background PNGs",
+    "namingPrefix": "bg_"
+  },
+  "$VFX_GEN": {
+    "signatureId": "vfx_image_signature_v1",
+    "intent": "Create actual transparent VFX frame images and timing metadata for satisfying casual-game feedback.",
+    "visualStamp": "modern mobile casual VFX, transparent bitmap frames, style-locked glow and particles",
+    "requiredImageOutput": "transparent VFX frame sequence",
+    "namingPrefix": "vfx_"
+  }
+}
