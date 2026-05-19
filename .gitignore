@@ -1,0 +1,23 @@
+node_modules/
+dist/
+.env
+.env.local
+.DS_Store
+Thumbs.db
+
+# Generated asset runs can become large; keep the folder structure only.
+exports/**
+!exports/.gitkeep
+!exports/unity/
+!exports/unity/.gitkeep
+!exports/godot/
+!exports/godot/.gitkeep
+!exports/web/
+!exports/web/.gitkeep
+
+assets/generated/**
+!assets/generated/.gitkeep
+
+# Runtime memory is local by default.
+memory/*.json
+!memory/.gitkeep

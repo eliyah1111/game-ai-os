@@ -1,0 +1,29 @@
+{
+  "command": "$UI_GEN",
+  "purpose": "Generate complete mobile game UI systems with precise responsive layout metadata.",
+  "supports": [
+    "menus",
+    "HUD",
+    "settings",
+    "pause screens",
+    "game over screens",
+    "buttons",
+    "popups",
+    "progress bars",
+    "score counters"
+  ],
+  "outputs": [
+    "layered UI assets",
+    "layout metadata",
+    "responsive rules",
+    "typography system",
+    "spacing system",
+    "animation suggestions"
+  ],
+  "guardrails": [
+    "safe-area aware",
+    "touch accessible",
+    "synchronized spacing",
+    "modern casual/puzzle aesthetics"
+  ]
+}

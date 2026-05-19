@@ -1,0 +1,4 @@
+interface:
+  display_name: "Background Gen"
+  short_description: "Layered mobile casual-game backgrounds with parallax, blur maps, and readability metadata."
+  default_prompt: "Use $BACKGROUND_GEN only. Generate modern mobile casual/puzzle backgrounds with active Style Lock tokens, gameplay-safe contrast, layered depth, crop-safe portrait/landscape variants, blur maps for menus, parallax metadata, and no pixel-art RPG maps or AAA-realistic environments."

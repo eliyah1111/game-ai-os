@@ -1,0 +1,21 @@
+{
+  "profiles": [
+    "glossy_mobile_arcade",
+    "clean_puzzle_minimalism",
+    "soft_neon_casual",
+    "colorful_toy_like_ui",
+    "modern_hypercasual"
+  ],
+  "lockedSystems": [
+    "palette",
+    "lighting",
+    "shape_language",
+    "shadow_style",
+    "border_radius",
+    "spacing",
+    "typography",
+    "outline",
+    "animation"
+  ],
+  "policy": "Every skill receives the active StyleProfile and must preserve it in metadata and render recipes."
+}

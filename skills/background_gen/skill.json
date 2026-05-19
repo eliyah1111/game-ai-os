@@ -1,0 +1,21 @@
+{
+  "command": "$BACKGROUND_GEN",
+  "purpose": "Generate layered game environments and casual-game backgrounds.",
+  "supports": [
+    "looping backgrounds",
+    "layered scenes",
+    "parallax systems",
+    "casual environments"
+  ],
+  "outputs": [
+    "layered backgrounds",
+    "depth separation",
+    "blur maps",
+    "atmosphere metadata"
+  ],
+  "guardrails": [
+    "preserve gameplay visibility",
+    "avoid heavy realism",
+    "keep mobile contrast readable"
+  ]
+}

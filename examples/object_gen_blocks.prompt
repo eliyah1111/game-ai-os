@@ -1,0 +1,10 @@
+$OBJECT_GEN
+Puzzle blocks, booster bomb, collectible star, tile barrier
+
+Style:
+clean puzzle minimalism
+
+Output:
+- transparent PNG variants
+- collision metadata
+- scale rules

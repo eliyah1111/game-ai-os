@@ -1,0 +1,14 @@
+$UI_GEN
+Create:
+- start menu
+- settings menu
+- game over popup
+
+Style:
+modern glossy puzzle game
+
+Layout:
+- notch-safe portrait layout
+- responsive tablet rules
+- exact button alignment
+- safe area aware HUD

@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Game AI OS Prompt Intent",
+  "type": "object",
+  "required": [
+    "command",
+    "subject"
+  ],
+  "properties": {
+    "command": {
+      "enum": [
+        "$SPRITE_GEN",
+        "$UI_GEN",
+        "$OBJECT_GEN",
+        "$BACKGROUND_GEN",
+        "$VFX_GEN"
+      ]
+    },
+    "subject": {
+      "type": "string"
+    },
+    "style": {
+      "type": "string"
+    },
+    "animations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "screens": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "layoutRules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "command": "$OBJECT_GEN",
+  "purpose": "Generate gameplay objects for casual and puzzle games.",
+  "supports": [
+    "puzzle blocks",
+    "obstacles",
+    "collectibles",
+    "arrows",
+    "balls",
+    "tiles",
+    "barriers",
+    "tubes",
+    "boosters"
+  ],
+  "outputs": [
+    "transparent PNGs",
+    "variants",
+    "object metadata",
+    "scale rules",
+    "collision metadata"
+  ],
+  "guardrails": [
+    "clear silhouettes",
+    "consistent variants",
+    "mobile readability",
+    "not pixel art"
+  ]
+}

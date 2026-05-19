@@ -1,0 +1,24 @@
+{
+  "command": "$VFX_GEN",
+  "purpose": "Generate satisfying casual-game effects.",
+  "supports": [
+    "explosions",
+    "score pops",
+    "glow effects",
+    "combo effects",
+    "win effects",
+    "particle systems"
+  ],
+  "outputs": [
+    "VFX frames",
+    "timing metadata",
+    "blending suggestions",
+    "animation curves"
+  ],
+  "guardrails": [
+    "short readable feedback",
+    "style-matched glow and particles",
+    "mobile performance variants",
+    "not pixel art"
+  ]
+}

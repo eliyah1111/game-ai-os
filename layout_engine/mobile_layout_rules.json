@@ -1,0 +1,42 @@
+{
+  "baseCanvas": {
+    "portrait": {
+      "width": 1080,
+      "height": 1920
+    },
+    "landscape": {
+      "width": 1920,
+      "height": 1080
+    }
+  },
+  "safeAreas": {
+    "phonePortrait": {
+      "top": 88,
+      "right": 36,
+      "bottom": 54,
+      "left": 36
+    },
+    "phoneLandscape": {
+      "top": 36,
+      "right": 76,
+      "bottom": 28,
+      "left": 76
+    },
+    "tablet": {
+      "top": 52,
+      "right": 72,
+      "bottom": 42,
+      "left": 72
+    }
+  },
+  "touchTargets": {
+    "minimumDp": 56,
+    "preferredPrimaryButtonHeight": 72
+  },
+  "grid": {
+    "columns": 12,
+    "rows": 24,
+    "gutter": 16,
+    "margin": 48
+  }
+}

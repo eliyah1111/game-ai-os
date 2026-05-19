@@ -1,0 +1,25 @@
+{
+  "command": "$SPRITE_GEN",
+  "purpose": "Generate gameplay characters and animated gameplay assets for modern mobile casual games.",
+  "supports": [
+    "idle",
+    "movement",
+    "hit",
+    "win",
+    "lose",
+    "loop animations"
+  ],
+  "outputs": [
+    "transparent PNGs",
+    "animation frames",
+    "sprite atlases",
+    "metadata JSON",
+    "animation timing",
+    "collision suggestions"
+  ],
+  "guardrails": [
+    "not pixel art",
+    "not retro RPG sprites",
+    "not AAA realism"
+  ]
+}

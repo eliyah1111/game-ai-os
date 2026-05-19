@@ -1,0 +1,35 @@
+{
+  "name": "game-ai-os",
+  "version": "0.1.0",
+  "description": "A modular AI-powered game asset creation system for modern mobile casual and puzzle games.",
+  "main": "dist/src/index.js",
+  "bin": {
+    "game-ai-os": "dist/src/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node dist/tests/parser.test.js",
+    "generate:ui": "npm run build && node dist/src/cli.js --input examples/ui_gen_start_menu.prompt",
+    "generate:sprite": "npm run build && node dist/src/cli.js --input examples/sprite_gen_flying_cube.prompt",
+    "process:sheet": "npm run build && node dist/src/tools/processSheetCli.js",
+    "make:layout-guide": "npm run build && node dist/src/tools/makeLayoutGuideCli.js"
+  },
+  "keywords": [
+    "ai",
+    "game-assets",
+    "mobile-games",
+    "casual-games",
+    "puzzle-games",
+    "typescript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "pngjs": "^7.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.10",
+    "@types/pngjs": "^6.0.5",
+    "typescript": "^5.7.2"
+  }
+}
