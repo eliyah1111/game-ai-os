@@ -48,7 +48,7 @@ Style:
 modern glossy puzzle game
 ```
 
-If the autocomplete menu is open, look for `$SPRITE_GEN`, `$UI_GEN`, `$OBJECT_GEN`, `$BACKGROUND_GEN`, and `$VFX_GEN`. They are skills, not plugins.
+If the autocomplete menu is open, look for `$SPRITE_GEN`, `$UI_GEN`, `$OBJECT_GEN`, `$BACKGROUND_GEN`, and `$VFX_GEN`. The `$` is part of the skill command name.
 
 ## Quick Start
 

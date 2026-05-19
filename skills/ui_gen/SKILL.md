@@ -1,9 +1,9 @@
 ---
-name: UI_GEN
+name: "$UI_GEN"
 description: "Generate precise responsive mobile casual-game UI systems with Style Lock consistency, safe areas, anchors, layered assets, typography, spacing, layout metadata, and deterministic layout guides. Use for $UI_GEN only."
 ---
 
-# UI Gen
+# $UI_GEN
 
 Use this skill only when the user invokes `$UI_GEN`.
 

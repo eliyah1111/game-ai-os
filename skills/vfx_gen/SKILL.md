@@ -1,9 +1,9 @@
 ---
-name: VFX_GEN
+name: "$VFX_GEN"
 description: "Generate satisfying modern mobile casual-game VFX frames, timing metadata, blend modes, animation curves, particle recipes, and deterministic frame processing. Use for $VFX_GEN only."
 ---
 
-# VFX Gen
+# $VFX_GEN
 
 Use this skill only when the user invokes `$VFX_GEN`.
 

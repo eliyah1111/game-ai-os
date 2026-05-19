@@ -1,9 +1,9 @@
 ---
-name: OBJECT_GEN
+name: "$OBJECT_GEN"
 description: "Generate modern mobile puzzle gameplay objects, variants, collision metadata, scale rules, transparent PNG recipes, and deterministic variant-sheet processing. Use for $OBJECT_GEN only."
 ---
 
-# Object Gen
+# $OBJECT_GEN
 
 Use this skill only when the user invokes `$OBJECT_GEN`.
 

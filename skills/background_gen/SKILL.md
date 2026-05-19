@@ -1,9 +1,9 @@
 ---
-name: BACKGROUND_GEN
+name: "$BACKGROUND_GEN"
 description: "Generate layered modern mobile casual-game backgrounds with parallax metadata, loop rules, blur maps, atmosphere notes, and gameplay readability constraints. Use for $BACKGROUND_GEN only."
 ---
 
-# Background Gen
+# $BACKGROUND_GEN
 
 Use this skill only when the user invokes `$BACKGROUND_GEN`.
 

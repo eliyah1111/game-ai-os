@@ -32,7 +32,7 @@ curl -fsSL https://raw.githubusercontent.com/eliyah1111/game-ai-os/main/install.
 
 Restart Codex after installation so the new skills are loaded.
 
-The commands appear as Codex skills after restart:
+The commands appear as Codex skills after restart, with `$` as part of the skill command name:
 
 - `$SPRITE_GEN`
 - `$UI_GEN`
