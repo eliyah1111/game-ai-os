@@ -38,7 +38,7 @@ Infer these from the user request:
 1. Select an effect model from `references/vfx-timing.md`.
 2. Apply the `$VFX_GEN` command signature and active Style Lock profile.
 3. Write a style-locked prompt for transparent VFX frames.
-4. Use built-in image generation to create a raw sheet with solid `#FF00FF` background when processing is needed.
+4. Use built-in image generation to create a raw sheet with solid light-pink `#FFD6E7` background when processing is needed.
 4. Use `scripts/process_vfx_sheet.mjs` to remove chroma key, split frames, and emit QC metadata.
 5. Return frames, timing metadata, blending suggestions, and animation curves.
 
@@ -50,6 +50,14 @@ Infer these from the user request:
 - animation curves
 - particle notes
 - low-performance variant notes
+
+## Pink Key VFX Extraction
+
+- raw VFX sheets use exact flat light-pink `#FFD6E7`
+- each VFX frame stays inside its cell
+- the processor removes the pink key exactly with tolerance `0`
+- full-cell transparent frames preserve timing and alignment
+- trimmed frames and exact pivots are written to `extracted/` and `placement-data.json`
 
 ## Resources
 

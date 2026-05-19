@@ -8,7 +8,7 @@ Use these rules for `$SPRITE_GEN` prompts.
 - active Style Lock style name
 - clean glossy or clean minimal rendering based on active style
 - transparent final output
-- solid flat `#FF00FF` raw background when processing a sheet
+- solid flat light-pink `#FFD6E7` raw background when processing a sheet
 - no text
 - no labels
 - not pixel art
@@ -25,5 +25,5 @@ Use the active Style Lock profile: Glossy Mobile Arcade.
 Six equal cells, read left to right, top row then bottom row.
 Action: jump. Frames: anticipation, lift, peak, float, land squash, settle.
 Same cube identity, same size, same center anchor, full body inside every cell.
-Solid flat #FF00FF background, no borders, no labels, no UI, not pixel art.
+Solid flat light-pink #FFD6E7 background, no borders, no labels, no UI, not pixel art.
 ```

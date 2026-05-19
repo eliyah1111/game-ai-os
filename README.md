@@ -78,7 +78,7 @@ Forge-style local processing tools:
 
 ```bash
 npm run make:layout-guide -- --output exports/tmp/ui-guide.svg --rows 4 --cols 4
-npm run process:sheet -- --input raw-sheet.png --output exports/tmp/sprite --rows 2 --cols 2 --name spr_idle --chroma-key "#FF00FF"
+npm run process:sheet -- --input raw-sheet.png --output exports/tmp/sprite --rows 2 --cols 2 --name spr_idle --chroma-key "#FFD6E7" --tolerance 0
 ```
 
 Each generation writes an export folder under `exports/` with:
@@ -149,6 +149,8 @@ Each skill follows a Forge-style package contract:
 - `scripts/` for deterministic local processing
 
 Each command also has a fixed image signature stored in `command_signatures/command_signatures.json` and emitted into `metadata.json`.
+
+The extraction workflow uses a fixed light-pink key background: `#FFD6E7`. Generated UI sheets, sprite sheets, object sheets, and VFX sheets should place the art on that exact flat color. The local processor removes only that exact color by default, writes a full transparent canvas that preserves coordinates, writes trimmed assets into `extracted/`, and writes exact placement metadata into `placement-data.json`.
 
 ## Core Systems
 

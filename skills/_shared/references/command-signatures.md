@@ -10,6 +10,8 @@ Each command has a fixed signature, or visual stamp. This keeps behavior predict
 | `$BACKGROUND_GEN` | gameplay-safe layered mobile background, depth and blur metadata | layered background PNGs |
 | `$VFX_GEN` | short satisfying casual-game VFX, transparent frames, blend/timing metadata | VFX frame sequence |
 
+All commands use the fixed Pink Key extraction background `#FFD6E7` when raw art needs cutting. The processor removes this color exactly and writes `placement-data.json` for pixel-perfect positioning.
+
 ## Shared Stamp Rules
 
 - The command name with `$` is part of the identity.

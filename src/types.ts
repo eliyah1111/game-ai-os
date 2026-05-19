@@ -18,12 +18,19 @@ export interface CommandSignature {
   imageGeneration: {
     required: boolean;
     provider: "codex_image_gen";
-    rawBackground: "transparent" | "#FF00FF" | "style_background";
+    rawBackground: "transparent" | "#FFD6E7" | "style_background";
     finalFormat: "transparent_png" | "layered_png" | "png_sequence";
     preferredAspectRatio: string;
     minimumResolution: {
       width: number;
       height: number;
+    };
+    extraction: {
+      mode: "pixel_exact_pink_key";
+      matteColor: "#FFD6E7";
+      tolerance: number;
+      preserveCanvasCoordinates: boolean;
+      trimTransparentBounds: boolean;
     };
   };
   visualStamp: {

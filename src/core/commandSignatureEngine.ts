@@ -1,5 +1,13 @@
 import { CommandName, CommandSignature } from "../types";
 
+const PINK_KEY_EXTRACTION = {
+  mode: "pixel_exact_pink_key" as const,
+  matteColor: "#FFD6E7" as const,
+  tolerance: 0,
+  preserveCanvasCoordinates: true,
+  trimTransparentBounds: true
+};
+
 const SIGNATURES: Record<CommandName, CommandSignature> = {
   $SPRITE_GEN: {
     command: "$SPRITE_GEN",
@@ -9,14 +17,15 @@ const SIGNATURES: Record<CommandName, CommandSignature> = {
     imageGeneration: {
       required: true,
       provider: "codex_image_gen",
-      rawBackground: "#FF00FF",
+      rawBackground: "#FFD6E7",
       finalFormat: "png_sequence",
       preferredAspectRatio: "1:1",
-      minimumResolution: { width: 1024, height: 1024 }
+      minimumResolution: { width: 1024, height: 1024 },
+      extraction: PINK_KEY_EXTRACTION
     },
     visualStamp: {
-      promptPrefix: "GAME AI OS $SPRITE_GEN IMAGE STAMP: modern mobile casual gameplay sprite, actual bitmap art, consistent character identity, style-locked palette, clean scalable silhouette.",
-      promptSuffix: "Output must be image-generation-ready, not a text plan; no pixel art, no retro RPG sheet, no AAA realism.",
+      promptPrefix: "GAME AI OS $SPRITE_GEN IMAGE STAMP: modern mobile casual gameplay sprite, actual bitmap art, exact flat light-pink #FFD6E7 background for pixel-perfect extraction, consistent character identity, style-locked palette, clean scalable silhouette.",
+      promptSuffix: "Output must be image-generation-ready, not a text plan; keep #FFD6E7 only as the background key color; no pixel art, no retro RPG sheet, no AAA realism.",
       namingPrefix: "spr_",
       outputFolder: "sprites"
     },
@@ -31,14 +40,15 @@ const SIGNATURES: Record<CommandName, CommandSignature> = {
     imageGeneration: {
       required: true,
       provider: "codex_image_gen",
-      rawBackground: "style_background",
+      rawBackground: "#FFD6E7",
       finalFormat: "layered_png",
       preferredAspectRatio: "9:16",
-      minimumResolution: { width: 1080, height: 1920 }
+      minimumResolution: { width: 1080, height: 1920 },
+      extraction: PINK_KEY_EXTRACTION
     },
     visualStamp: {
-      promptPrefix: "GAME AI OS $UI_GEN IMAGE STAMP: modern mobile casual puzzle UI, actual UI bitmap assets, exact safe-area layout, style-locked components, synchronized spacing.",
-      promptSuffix: "Output must include visible UI image assets plus layout metadata; no landing page, no pixel UI, no RPG menu skin.",
+      promptPrefix: "GAME AI OS $UI_GEN IMAGE STAMP: modern mobile casual puzzle UI, actual UI bitmap assets on exact flat light-pink #FFD6E7 background, pixel-perfect extraction, exact safe-area layout, style-locked components, synchronized spacing.",
+      promptSuffix: "Output must include visible UI image assets plus layout metadata; keep #FFD6E7 only as the background key color; no landing page, no pixel UI, no RPG menu skin.",
       namingPrefix: "ui_",
       outputFolder: "ui"
     },
@@ -53,14 +63,15 @@ const SIGNATURES: Record<CommandName, CommandSignature> = {
     imageGeneration: {
       required: true,
       provider: "codex_image_gen",
-      rawBackground: "#FF00FF",
+      rawBackground: "#FFD6E7",
       finalFormat: "transparent_png",
       preferredAspectRatio: "1:1",
-      minimumResolution: { width: 512, height: 512 }
+      minimumResolution: { width: 512, height: 512 },
+      extraction: PINK_KEY_EXTRACTION
     },
     visualStamp: {
-      promptPrefix: "GAME AI OS $OBJECT_GEN IMAGE STAMP: modern mobile puzzle object, actual transparent bitmap, readable board-scale silhouette, style-locked variants.",
-      promptSuffix: "Output must be renderable object art with collision metadata; no RPG props, no pixel tileset, no realism-heavy textures.",
+      promptPrefix: "GAME AI OS $OBJECT_GEN IMAGE STAMP: modern mobile puzzle object, actual transparent bitmap on exact flat light-pink #FFD6E7 background, pixel-perfect extraction, readable board-scale silhouette, style-locked variants.",
+      promptSuffix: "Output must be renderable object art with collision metadata; keep #FFD6E7 only as the background key color; no RPG props, no pixel tileset, no realism-heavy textures.",
       namingPrefix: "obj_",
       outputFolder: "objects"
     },
@@ -75,14 +86,15 @@ const SIGNATURES: Record<CommandName, CommandSignature> = {
     imageGeneration: {
       required: true,
       provider: "codex_image_gen",
-      rawBackground: "style_background",
+      rawBackground: "#FFD6E7",
       finalFormat: "layered_png",
       preferredAspectRatio: "9:16",
-      minimumResolution: { width: 1440, height: 2560 }
+      minimumResolution: { width: 1440, height: 2560 },
+      extraction: PINK_KEY_EXTRACTION
     },
     visualStamp: {
-      promptPrefix: "GAME AI OS $BACKGROUND_GEN IMAGE STAMP: modern mobile casual puzzle background, actual bitmap scene, gameplay-safe contrast, layered depth.",
-      promptSuffix: "Output must be a visible background image with layer/depth metadata; no RPG map, no tilemap default, no AAA realism.",
+      promptPrefix: "GAME AI OS $BACKGROUND_GEN IMAGE STAMP: modern mobile casual puzzle background layers on exact flat light-pink #FFD6E7 extraction background when exporting separated layers, actual bitmap scene, gameplay-safe contrast, layered depth.",
+      promptSuffix: "Output must be a visible background image with layer/depth metadata; keep #FFD6E7 only as the extraction background for separated layers; no RPG map, no tilemap default, no AAA realism.",
       namingPrefix: "bg_",
       outputFolder: "backgrounds"
     },
@@ -97,14 +109,15 @@ const SIGNATURES: Record<CommandName, CommandSignature> = {
     imageGeneration: {
       required: true,
       provider: "codex_image_gen",
-      rawBackground: "#FF00FF",
+      rawBackground: "#FFD6E7",
       finalFormat: "png_sequence",
       preferredAspectRatio: "1:1",
-      minimumResolution: { width: 768, height: 768 }
+      minimumResolution: { width: 768, height: 768 },
+      extraction: PINK_KEY_EXTRACTION
     },
     visualStamp: {
-      promptPrefix: "GAME AI OS $VFX_GEN IMAGE STAMP: modern mobile casual VFX, actual transparent bitmap frames, satisfying short feedback, style-locked glow and particles.",
-      promptSuffix: "Output must be VFX frames plus timing/blend metadata; no plan-only VFX, no pixel explosion, no long screen-blocking effect.",
+      promptPrefix: "GAME AI OS $VFX_GEN IMAGE STAMP: modern mobile casual VFX, actual transparent bitmap frames on exact flat light-pink #FFD6E7 background, pixel-perfect extraction, satisfying short feedback, style-locked glow and particles.",
+      promptSuffix: "Output must be VFX frames plus timing/blend metadata; keep #FFD6E7 only as the background key color; no plan-only VFX, no pixel explosion, no long screen-blocking effect.",
       namingPrefix: "vfx_",
       outputFolder: "vfx"
     },

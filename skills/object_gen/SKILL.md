@@ -50,6 +50,14 @@ Infer these from the user request:
 - collision metadata
 - engine manifests
 
+## Pink Key Object Extraction
+
+- raw object sheets use exact flat light-pink `#FFD6E7`
+- do not use the key color inside the object artwork
+- each variant stays inside its own cell
+- extracted objects are trimmed to visible pixels
+- `placement-data.json` stores exact source cell, bounding box, offset, and pivot
+
 ## Resources
 
 - `references/object-taxonomy.md`

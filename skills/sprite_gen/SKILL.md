@@ -41,7 +41,7 @@ Infer these from the user request:
 1. Infer the animation plan and frame counts.
 2. Apply the `$SPRITE_GEN` command signature and active Style Lock profile.
 3. Write a production prompt using `references/prompt-rules.md`.
-4. Use built-in image generation to create the raw visual sheet with a flat `#FF00FF` background when sheet processing is needed.
+4. Use built-in image generation to create the raw visual sheet with a flat light-pink `#FFD6E7` background when sheet processing is needed.
 4. Run `scripts/process_sprite_sheet.mjs` to remove chroma key, split frames, and write QC metadata.
 5. Reject or regenerate if frames touch cell edges, drift in scale, or lose silhouette readability.
 6. Return transparent PNGs, frames, atlas metadata, timing, and collision suggestions.
@@ -54,6 +54,15 @@ Infer these from the user request:
 - win: 6 frames, `2x3`, non-looping
 - lose: 4 frames, `2x2`, non-looping
 - loop VFX attached to sprite: separate VFX request unless it is tiny and tightly attached
+
+## Pink Key Animation Extraction
+
+- raw animation sheets use exact flat light-pink `#FFD6E7`
+- every frame stays inside its cell
+- the processor removes the pink key exactly with tolerance `0`
+- full-cell transparent frames preserve animation cell alignment
+- trimmed frame PNGs go into `extracted/`
+- `placement-data.json` stores per-frame offsets and pivots for engine playback
 
 ## Resources
 

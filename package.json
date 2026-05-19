@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "test": "npm run build && node dist/tests/parser.test.js",
+    "test": "npm run build && node dist/tests/parser.test.js && node dist/tests/processor.test.js",
     "generate:ui": "npm run build && node dist/src/cli.js --input examples/ui_gen_start_menu.prompt",
     "generate:sprite": "npm run build && node dist/src/cli.js --input examples/sprite_gen_flying_cube.prompt",
     "process:sheet": "npm run build && node dist/src/tools/processSheetCli.js",

@@ -2,36 +2,66 @@
   "$SPRITE_GEN": {
     "signatureId": "sprite_image_signature_v1",
     "intent": "Create actual transparent gameplay sprite images and animation frames for modern mobile casual games.",
-    "visualStamp": "modern mobile casual gameplay sprite, consistent character identity, style-locked palette, clean scalable silhouette",
+    "visualStamp": "modern mobile casual gameplay sprite on exact flat light-pink #FFD6E7 key background, consistent character identity, style-locked palette, clean scalable silhouette",
     "requiredImageOutput": "transparent PNG frames and sprite atlas",
-    "namingPrefix": "spr_"
+    "namingPrefix": "spr_",
+    "extraction": {
+      "mode": "pixel_exact_pink_key",
+      "matteColor": "#FFD6E7",
+      "tolerance": 0,
+      "placementMetadata": "placement-data.json"
+    }
   },
   "$UI_GEN": {
     "signatureId": "ui_image_signature_v1",
     "intent": "Create actual layered mobile game UI images with precise responsive layout metadata.",
-    "visualStamp": "modern mobile casual puzzle UI, exact safe-area layout, style-locked components, synchronized spacing",
+    "visualStamp": "modern mobile casual puzzle UI on exact flat light-pink #FFD6E7 key background, exact safe-area layout, style-locked components, synchronized spacing",
     "requiredImageOutput": "layered UI PNG assets",
-    "namingPrefix": "ui_"
+    "namingPrefix": "ui_",
+    "extraction": {
+      "mode": "pixel_exact_pink_key",
+      "matteColor": "#FFD6E7",
+      "tolerance": 0,
+      "placementMetadata": "placement-data.json"
+    }
   },
   "$OBJECT_GEN": {
     "signatureId": "object_image_signature_v1",
     "intent": "Create actual transparent gameplay object images and variants for mobile puzzle games.",
-    "visualStamp": "modern mobile puzzle object, readable board-scale silhouette, style-locked variants",
+    "visualStamp": "modern mobile puzzle object on exact flat light-pink #FFD6E7 key background, readable board-scale silhouette, style-locked variants",
     "requiredImageOutput": "transparent PNG variants",
-    "namingPrefix": "obj_"
+    "namingPrefix": "obj_",
+    "extraction": {
+      "mode": "pixel_exact_pink_key",
+      "matteColor": "#FFD6E7",
+      "tolerance": 0,
+      "placementMetadata": "placement-data.json"
+    }
   },
   "$BACKGROUND_GEN": {
     "signatureId": "background_image_signature_v1",
     "intent": "Create actual layered background images for mobile casual and puzzle games.",
-    "visualStamp": "modern mobile casual puzzle background, gameplay-safe contrast, layered depth",
+    "visualStamp": "modern mobile casual puzzle background layers on exact flat light-pink #FFD6E7 key background when exporting separated layers, gameplay-safe contrast, layered depth",
     "requiredImageOutput": "layered background PNGs",
-    "namingPrefix": "bg_"
+    "namingPrefix": "bg_",
+    "extraction": {
+      "mode": "pixel_exact_pink_key",
+      "matteColor": "#FFD6E7",
+      "tolerance": 0,
+      "placementMetadata": "placement-data.json"
+    }
   },
   "$VFX_GEN": {
     "signatureId": "vfx_image_signature_v1",
     "intent": "Create actual transparent VFX frame images and timing metadata for satisfying casual-game feedback.",
-    "visualStamp": "modern mobile casual VFX, transparent bitmap frames, style-locked glow and particles",
+    "visualStamp": "modern mobile casual VFX on exact flat light-pink #FFD6E7 key background, transparent bitmap frames, style-locked glow and particles",
     "requiredImageOutput": "transparent VFX frame sequence",
-    "namingPrefix": "vfx_"
+    "namingPrefix": "vfx_",
+    "extraction": {
+      "mode": "pixel_exact_pink_key",
+      "matteColor": "#FFD6E7",
+      "tolerance": 0,
+      "placementMetadata": "placement-data.json"
+    }
   }
 }

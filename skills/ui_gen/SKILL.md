@@ -39,9 +39,11 @@ Infer these from the user request:
 2. Resolve the active Style Lock profile.
 3. Apply the `$UI_GEN` command signature.
 4. Create a layout plan from `references/layout-contract.md`.
-5. Optionally create a layout guide with `scripts/make_layout_guide.mjs`.
-6. Use built-in image generation to create layered UI assets and composition images.
-7. Write `layout_data.json` with anchors, frames, z-index, safe areas, responsive rules, and sync rules.
+5. Generate the UI art on one exact flat light-pink `#FFD6E7` canvas. Put buttons, text, counters, popups, icons, and panels on that pink canvas at their intended coordinates.
+6. Optionally create a layout guide with `scripts/make_layout_guide.mjs`.
+7. Use built-in image generation to create layered UI assets and composition images.
+8. Run the Pink Key processor so the light-pink background is removed pixel-for-pixel, the full transparent canvas preserves exact coordinates, and trimmed assets are written with placement metadata.
+9. Write `layout_data.json` with anchors, frames, z-index, safe areas, responsive rules, and sync rules.
 
 ## Output
 
@@ -52,6 +54,15 @@ Infer these from the user request:
 - spacing system
 - animation suggestions
 - Unity/Godot/Web manifests
+
+## Pink Key UI Extraction
+
+- raw UI sheet background must be exactly `#FFD6E7`
+- do not use `#FFD6E7` inside the actual UI art
+- keep each UI component inside its intended safe area or grid cell
+- preserve a full transparent UI canvas for exact placement
+- export trimmed per-component assets when a grid or separate cells are used
+- use `placement-data.json` as the source of exact pixel coordinates
 
 ## Resources
 

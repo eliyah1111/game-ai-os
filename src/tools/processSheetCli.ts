@@ -5,7 +5,7 @@ import { processPngSheet } from "../processors/pngSheetProcessor";
 const args = parseArgs(process.argv.slice(2));
 
 if (!args.input || !args.output || !args.rows || !args.cols) {
-  throw new Error("Usage: processSheetCli --input raw.png --output out-dir --rows 2 --cols 2 [--name spr_idle] [--chroma-key #FF00FF] [--tolerance 8] [--fps 12]");
+  throw new Error("Usage: processSheetCli --input raw.png --output out-dir --rows 2 --cols 2 [--name spr_idle] [--chroma-key #FFD6E7] [--tolerance 0] [--fps 12] [--padding 0] [--no-trim true]");
 }
 
 const result = processPngSheet({
@@ -16,7 +16,9 @@ const result = processPngSheet({
   name: args.name ?? "sheet",
   chromaKey: args["chroma-key"],
   tolerance: args.tolerance ? Number(args.tolerance) : undefined,
-  fps: args.fps ? Number(args.fps) : undefined
+  fps: args.fps ? Number(args.fps) : undefined,
+  trim: args["no-trim"] === "true" ? false : undefined,
+  padding: args.padding ? Number(args.padding) : undefined
 });
 
 process.stdout.write(JSON.stringify(result, null, 2));

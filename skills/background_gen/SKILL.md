@@ -49,6 +49,13 @@ Infer these from the user request:
 - atmosphere metadata
 - Unity/Godot/Web manifests
 
+## Pink Key Layer Extraction
+
+- final full backgrounds can be normal full-canvas images
+- separated decorative layers use exact flat light-pink `#FFD6E7`
+- the processor removes pink and preserves the layer's original coordinates
+- `placement-data.json` stores exact layer offsets for parallax/runtime placement
+
 ## Resources
 
 - `references/background-strategies.md`
