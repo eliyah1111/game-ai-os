@@ -18,6 +18,24 @@ Game AI OS intentionally exposes only five commands:
 
 Any other command is rejected by the parser.
 
+## Install
+
+### Windows PowerShell
+
+```powershell
+irm https://raw.githubusercontent.com/eliyah1111/game-ai-os/main/install.ps1 | iex
+```
+
+### macOS / Linux
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/eliyah1111/game-ai-os/main/install.sh | bash
+```
+
+The installer clones or downloads this repository into `~/.codex/game-ai-os`, installs Node dependencies when `npm` is available, builds the TypeScript tools, and copies the five Forge-style skills into `~/.codex/skills`.
+
+Restart Codex after installation so the new skills load cleanly.
+
 ## Quick Start
 
 ```bash
