@@ -31,3 +31,13 @@ curl -fsSL https://raw.githubusercontent.com/eliyah1111/game-ai-os/main/install.
 - `$VFX_GEN`
 
 Restart Codex after installation so the new skills are loaded.
+
+The commands appear as Codex skills after restart:
+
+- `$SPRITE_GEN`
+- `$UI_GEN`
+- `$OBJECT_GEN`
+- `$BACKGROUND_GEN`
+- `$VFX_GEN`
+
+They are not plugins. Type the command at the start of a message, then write the asset request underneath it.

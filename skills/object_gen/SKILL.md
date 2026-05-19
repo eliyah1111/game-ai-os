@@ -1,5 +1,5 @@
 ---
-name: object_gen
+name: OBJECT_GEN
 description: "Generate modern mobile puzzle gameplay objects, variants, collision metadata, scale rules, transparent PNG recipes, and deterministic variant-sheet processing. Use for $OBJECT_GEN only."
 ---
 

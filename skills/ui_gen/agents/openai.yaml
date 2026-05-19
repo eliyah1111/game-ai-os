@@ -1,4 +1,4 @@
 interface:
-  display_name: "UI Gen"
+  display_name: "$UI_GEN"
   short_description: "Responsive mobile UI systems with exact anchors, safe areas, and synchronized design tokens."
   default_prompt: "Use $UI_GEN only. Create modern mobile casual/puzzle UI with active Style Lock tokens, exact anchor/frame/z-index metadata, notch-safe and tablet responsive rules, synchronized button/icon/font/spacing scaling, readable touch targets, layered assets, and no pixel-art or retro RPG UI."

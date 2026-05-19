@@ -1,4 +1,4 @@
 interface:
-  display_name: "VFX Gen"
+  display_name: "$VFX_GEN"
   short_description: "Casual-game VFX frames, timing metadata, blend modes, and animation curves."
   default_prompt: "Use $VFX_GEN only. Generate modern mobile casual/puzzle VFX with active Style Lock tokens, transparent frames, short satisfying feedback timing, blend-mode metadata, animation curves, low-performance variants, no pixel art, and no effects that hide puzzle state too long."

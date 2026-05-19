@@ -1,4 +1,4 @@
 interface:
-  display_name: "Object Gen"
+  display_name: "$OBJECT_GEN"
   short_description: "Puzzle objects, boosters, collectibles, variants, scale rules, and collision metadata."
   default_prompt: "Use $OBJECT_GEN only. Generate modern mobile casual/puzzle gameplay objects with active Style Lock tokens, transparent PNG variants, consistent silhouettes, readable board-scale colors, inset collision metadata, scale rules for phone/tablet, and no pixel-art, retro RPG, or AAA realism."

@@ -1,5 +1,5 @@
 ---
-name: sprite_gen
+name: SPRITE_GEN
 description: "Generate modern mobile casual-game gameplay sprites and animation bundles with Style Lock consistency, transparent PNG outputs, frame metadata, atlas recipes, collision hints, and deterministic sheet processing. Use for $SPRITE_GEN only."
 ---
 

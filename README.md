@@ -36,6 +36,20 @@ The installer clones or downloads this repository into `~/.codex/game-ai-os`, in
 
 Restart Codex after installation so the new skills load cleanly.
 
+After restarting Codex, type one of the command names directly in the chat composer:
+
+```text
+$UI_GEN
+Create:
+- start menu
+- settings menu
+
+Style:
+modern glossy puzzle game
+```
+
+If the autocomplete menu is open, look for `$SPRITE_GEN`, `$UI_GEN`, `$OBJECT_GEN`, `$BACKGROUND_GEN`, and `$VFX_GEN`. They are skills, not plugins.
+
 ## Quick Start
 
 ```bash
